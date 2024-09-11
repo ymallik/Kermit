@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kermit - CPMS - Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group.inline {
+            display: flex;
+            align-items: center;
+        }
+        .form-group.inline label {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+        .form-group.inline select {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .buttons .button {
+            padding: 12px 25px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .buttons .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Kermit - CPMS</h1>
+    </div>
+
+    <div class="container">
+        <h2>Electronic Check Payment</h2>
+
+        <div class="form-group">
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" placeholder="Enter your account number">
+        </div>
+
+        <div class="form-group">
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" placeholder="Enter your bank name">
+        </div>
+
+        <div class="form-group">
+            <label for="routingNumber">Routing Number:</label>
+            <input type="text" id="routingNumber" placeholder="Enter your bank routing number">
+        </div>
+
+        <div class="form-group inline">
+            <label for="accountType">Account Type:</label>
+            <select id="accountType">
+                <option value="checking">Checking</option>
+                <option value="savings">Savings</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="chequeNumber">Check Number:</label>
+            <input type="text" id="chequeNumber" placeholder="Enter your check number">
+        </div>
+
+        <div class="form-group">
+            <label for="paymentAmount">Payment Amount:</label>
+            <input type="number" id="paymentAmount" placeholder="Enter payment amount">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email address">
+        </div>
+
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='Landing Page.html'">Cancel</button>
+            <button class="button" onclick="window.location.href='Quick Payment Process.html'">Next</button>
+        </div>
+    </div>
+
+</body>
+</html>

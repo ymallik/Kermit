@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kermit - CPMS - Credit Card Payment Processor Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-size: 16px;
+            color: #666;
+            margin-right: 20px;
+            flex: 1;
+        }
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="url"],
+        .form-group input[type="password"] {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            flex: 2;
+        }
+        .form-group select {
+            width: 150px;
+        }
+        .form-group .radio-group {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .form-group .radio-group input {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 12px 25px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Kermit - CPMS</h1>
+    </div>
+
+    <div class="container">
+        <h2>Payment Processor Configuration</h2>
+
+        <div class="form-group">
+            <label for="environment">Environment:</label>
+            <select id="environment">
+                <option value="test">Test</option>
+                <option value="production">Production</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="processorName">Payment Processor:</label>
+            <select id="processorName">
+                <option value="usio">USIO</option>
+                <option value="paypal">Paypal</option>
+                <option value="stripe">Stripe</option>
+                <option value="square">Square</option>
+            </select>
+            <div class="radio-group">
+                <input type="radio" name="defaultProcessor" value="default" id="defaultProcessor">
+                <label for="defaultProcessor">Set as Default</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="apiKey">API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your API key">
+        </div>
+
+        <div class="form-group">
+            <label for="newPaymentUrl">New Payment URL:</label>
+            <input type="url" id="newPaymentUrl" placeholder="https://example.com/new-payment">
+        </div>
+
+        <div class="form-group">
+            <label for="refundUrl">Refund URL:</label>
+            <input type="url" id="refundUrl" placeholder="https://example.com/refund">
+        </div>
+
+        <div class="form-group">
+            <label for="statusUrl">Payment Status URL:</label>
+            <input type="url" id="statusUrl" placeholder="https://example.com/status">
+        </div>
+
+        <div class="form-group">
+            <label for="webhookUrl">Webhook URL:</label>
+            <input type="url" id="webhookUrl" placeholder="https://example.com/webhook">
+        </div>
+
+        <div class="button-container">
+            <button class="button" onclick="alert('Configuration saved!')">Save</button>
+            <button class="button" onclick="alert('Configuration cancelled!')">Cancel</button>
+        </div>
+    </div>
+
+</body>
+</html>
