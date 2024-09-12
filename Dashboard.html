@@ -214,6 +214,36 @@
         /*.k-grid-header .k-header-column-menu {
             right: 24px;
         }*/
+
+        /* The message box is shown when the user clicks on the password field */
+    #passwordValdiationMessage {
+        display: none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+        #passwordValdiationMessage p {
+            padding: 0px;
+            font-size: normal;
+        }
+
+        /* The message box is shown when the user clicks on the confirm password field */
+    #passwordConfirmValdiationMessage {
+        display: none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+        #passwordConfirmValdiationMessage p {
+            padding: 0px;
+            font-size: normal;
+        }
     </style>
 </head>
 
@@ -565,7 +595,7 @@
                                                 <i class="ion-search pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
                                                     <p class="pub-menu-text dropdown-item">Search</p>
-                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Search Account</span>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Search by Account number/Payment date/Amount paid/Name</span>
                                                 </div>
                                             </li>
                                         </ul>
@@ -582,7 +612,7 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu   colMenu  sm-menu" aria-labelledby="Settings">
-                                    <a href="/Config/FeesPerTransaction">
+                                    <a href="#" onclick="configTransFee()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-calculator pub-menu-icon" aria-hidden="true"></i>
@@ -604,7 +634,7 @@
                                             </li>
                                         </ul>
                                     </a>
-                                    <a href="/Admin/PrivateUserList">
+                                    <a href="#" onclick="configUsers()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-person-stalker pub-menu-icon" aria-hidden="true"></i>
@@ -615,7 +645,7 @@
                                             </li>
                                         </ul>
                                     </a>
-                                    <a href="/Config/TextConfigurations">
+                                    <a href="#" onclick="configText()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-compose pub-menu-icon" aria-hidden="true"></i>
@@ -1012,6 +1042,117 @@
 
 <script type="text/javascript">
 
+function searchNameResults()
+{
+    var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Search Results by Name '+ document.getElementById("searchamount").value +'</h5></div></div>';
+       
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:150px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Account Number</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Service Address</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Amount</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Payment Status</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Paid Through</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:150px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>09-01403-01</td><td>PINE STREET WATER</td><td>$137.86</td><td>Paid</td><td>Credit Card</td></tr><tr class="k-no-data"><td>26-05053-04</td><td>761 HEJUPE</td><td>$235.00</td><td>Paid</td><td>Electronic Check</td></tr><tr class="k-no-data"><td>14-04352-01</td><td>615 S SYCAMORE STE A</td><td>$178.00</td><td>Paid</td><td>Cash</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt-4  p-lr-5"><button class="btn btn-inverse btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center exportpdf" type="button" id="btn-History-Back" onclick="searchName()">Back</button></div>';
+
+    newpage = newpage + '</div></div></div>';
+
+    $('.dashboard-page').html(newpage); 
+
+}
+
+function searchName()
+{
+    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Search by Name</h4>';
+    newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans" method="post">';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="searchamount" class="col-form-label mandatory-star">Name</label><div><input type="text" class="sero-input" id="searchamount" name="searchamount" maxlength="300" title="Name" value="JOSE ISMAEL"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><input type="reset" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Reset" value="Reset" id="Reset">';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="searchNameResults();">Search</button></div>';
+                                    
+    newpage = newpage + '</form>';
+    newpage = newpage + '</div></div></div></div>';
+    
+
+    $('.dashboard-page').html(newpage);
+
+    $('#side-menu').empty(); // clear the existing menu items
+    $('#side-menu').append('<li class="menu-title">Search</li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchFunction()"><i class="ion-ios7-search"></i><span>Account</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchAmount()"><i class="ion-ios7-search"></i><span>Dollar Amount</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchPaymentDate()"><i class="ion-ios7-search"></i><span>Payment Date</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchName()"><i class="ion-ios7-search"></i><span>Name</span></a></li>');
+
+    
+}
+
+function searchPaymentDateResults()
+{
+    var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Payment Date Search Results done on '+ document.getElementById("searchamount").value +'</h5></div></div>';
+       
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Account Number</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Name</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Amount</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Payment Status</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Paid Through</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>09-01403-01</td><td>JOSE ISMAEL</td><td>$137.86</td><td>Paid</td><td>Credit Card</td></tr><tr class="k-no-data"><td>26-05053-04</td><td>JESUS RODRIGUEZ</td><td>$235.00</td><td>Paid</td><td>Electronic Check</td></tr><tr class="k-no-data"><td>14-04352-01</td><td>TANNER DALE</td><td>$178.00</td><td>Paid</td><td>Cash</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt-4  p-lr-5"><button class="btn btn-inverse btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center exportpdf" type="button" id="btn-History-Back" onclick="searchPaymentDate()">Back</button></div>';
+
+    newpage = newpage + '</div></div></div>';
+
+    $('.dashboard-page').html(newpage); 
+
+}
+
+function searchPaymentDate()
+{
+    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Payment Date Search </h4>';
+    newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans" method="post">';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="searchamount" class="col-form-label mandatory-star">Payment Date</label><div><input type="text" class="sero-input" id="searchamount" name="searchamount" maxlength="300" title="Payment Date" value="08-21-2024"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><input type="reset" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Reset" value="Reset" id="Reset">';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="searchPaymentDateResults();">Search</button></div>';
+                                    
+    newpage = newpage + '</form>';
+    newpage = newpage + '</div></div></div></div>';
+    
+
+    $('.dashboard-page').html(newpage);
+
+    $('#side-menu').empty(); // clear the existing menu items
+    $('#side-menu').append('<li class="menu-title">Search</li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchFunction()"><i class="ion-ios7-search"></i><span>Account</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchAmount()"><i class="ion-ios7-search"></i><span>Dollar Amount</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchPaymentDate()"><i class="ion-ios7-search"></i><span>Payment Date</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchName()"><i class="ion-ios7-search"></i><span>Name</span></a></li>');
+
+    
+}
+
+function searchAmountResults()
+{
+    var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Dollar Amount Search Results for $'+ document.getElementById("searchamount").value +'</h5></div></div>';
+       
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Account Number</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Name</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Paid Date</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Payment Status</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Paid Through</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:160px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>09-01403-01</td><td>JOSE ISMAEL</td><td>08-21-2024</td><td>Paid</td><td>Credit Card</td></tr><tr class="k-no-data"><td>26-05053-04</td><td>JESUS RODRIGUEZ</td><td>07-20-2024</td><td>Paid</td><td>Electronic Check</td></tr><tr class="k-no-data"><td>14-04352-01</td><td>TANNER DALE</td><td>06-21-2024</td><td>Paid</td><td>Cash</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt-4  p-lr-5"><button class="btn btn-inverse btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center exportpdf" type="button" id="btn-History-Back" onclick="searchAmount()">Back</button></div>';
+
+    newpage = newpage + '</div></div></div>';
+
+    $('.dashboard-page').html(newpage); 
+
+}
+
+function searchAmount()
+{
+    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Dollar Amount Search </h4>';
+    newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans" method="post">';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="searchamount" class="col-form-label mandatory-star">Amount</label><div><input type="text" class="sero-input" id="searchamount" name="searchamount" maxlength="300" title="Account Number" value="235.00"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><input type="reset" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Reset" value="Reset" id="Reset">';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="searchAmountResults();">Search</button></div>';
+                                    
+    newpage = newpage + '</form>';
+    newpage = newpage + '</div></div></div></div>';
+    
+
+    $('.dashboard-page').html(newpage);
+
+    $('#side-menu').empty(); // clear the existing menu items
+    $('#side-menu').append('<li class="menu-title">Search</li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchFunction()"><i class="ion-ios7-search"></i><span>Account</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchAmount()"><i class="ion-ios7-search"></i><span>Dollar Amount</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchPaymentDate()"><i class="ion-ios7-search"></i><span>Payment Date</span></a></li>');
+    $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchName()"><i class="ion-ios7-search"></i><span>Name</span></a></li>');
+
+    
+}
+
     function searchResults()
     {
         var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Account Search Results</h5></div></div>';
@@ -1046,6 +1187,9 @@
         $('#side-menu').empty(); // clear the existing menu items
         $('#side-menu').append('<li class="menu-title">Search</li>');
         $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchFunction()"><i class="ion-ios7-search"></i><span>Account</span></a></li>');
+        $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchAmount()"><i class="ion-ios7-search"></i><span>Dollar Amount</span></a></li>');
+        $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchPaymentDate()"><i class="ion-ios7-search"></i><span>Payment Date</span></a></li>');
+        $('#side-menu').append('<li> <a href="#" class="nav-link" id="btnAdvance" data-toggle="collapse" onclick="searchName()"><i class="ion-ios7-search"></i><span>Name</span></a></li>');
 
         
     }
@@ -1125,6 +1269,16 @@ var importstatus = '';
 var paymentStatus = '';
 var paymentDate = '';
 var paymentThrough = '';
+var bankcheckreturn = '';
+var bankcheckreturnfee = '';
+var feeeditbutton = '';
+var feedeletebutton = '';
+var emailaddress = '';
+var firstname = '';
+var usereditbutton = '';
+var newuseremailaddress = '';
+var newuserfirstname = '';
+var newusereditbutton = '';
 
 
 function Overview()
@@ -1483,6 +1637,127 @@ function addUserNote()
 
 }
 
+function addFeesDetailsProcess()
+{
+    bankcheckreturn = document.getElementById('feeoptions').value;
+    bankcheckreturnfee = '$'+ document.getElementById('fee').value;
+    feeeditbutton = '<a name="btnEdit" title="Edit" id="btnEdit"><i class="ion-compose"></i></a>';
+    feedeletebutton = '<a name="btnDelete" class="text-danger" title="Delete" id="btnDelete"><i class="ion-ios7-trash-outline"></i></a>';
+
+    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Transaction Fee Config</h5><button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add Fees Details" value="Add Fees Details" id="btnSubmit" onclick="addFeesDetails();">Add Fees Details</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Fees Type</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Fee</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th><th class="k-header k-filterable" data-field="WorkItemId" data-index="5" data-title="Work Item Id" id="621eb0e4-a874-4a73-bc7d-38dd901fa1a9" scope="col" style="display:none"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkItemId-asc">Work Item Id</a></th><th class="k-header k-filterable" data-field="LastUpdatedDate" data-index="6" data-title="Last Updated Date" id="459250c2-1498-4cc8-b90f-e0548461a1bb" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=LastUpdatedDate-asc">Delete</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + bankcheckreturn + '</td><td>' + bankcheckreturnfee + '</td><td>' + feeeditbutton + '</td><td>' + feedeletebutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '</div></div></div></div>';
+  
+    $('.dashboard-page').html(newpage);
+
+}
+
+function togglePassword() 
+{
+    // Get the password input and button elements
+    const passwordInput = document.getElementById('txtPassword');
+    //const toggleButton = document.querySelector('.input-container button');
+
+    // Toggle the type attribute of the password input
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Show the password
+        //toggleButton.textContent = 'Hide'; // Change button text
+    } else {
+        passwordInput.type = 'password'; // Hide the password
+        //toggleButton.textContent = 'Show'; // Change button text
+    }
+}
+
+function toggleConfirmPassword() 
+{
+    // Get the password input and button elements
+    const passwordInput = document.getElementById('txtConPassword');
+    //const toggleButton = document.querySelector('.input-container button');
+
+    // Toggle the type attribute of the password input
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Show the password
+        //toggleButton.textContent = 'Hide'; // Change button text
+    } else {
+        passwordInput.type = 'password'; // Hide the password
+        //toggleButton.textContent = 'Show'; // Change button text
+    }
+}
+
+function addNewUserSuccess()
+{ 
+    newuseremailaddress = document.getElementById('emailaddress').value;
+    newuserfirstname = document.getElementById('firstname').value;
+    newusereditbutton = '<a name="btnEdit" title="Edit" id="btnEdit"><i class="ion-compose"></i></a>';
+
+    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Agency Users</h5><button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add New User" value="Add New User" id="btnSubmit" onclick="addNewUser();">Add New User</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:200px" /><col style="width:150px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Email Address</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">First Name</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:200px" /><col style="width:150px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + newuseremailaddress + '</td><td>' + newuserfirstname + '</td><td>' + newusereditbutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '</div></div></div></div>';
+  
+    $('.dashboard-page').html(newpage);
+}
+
+function addNewUser()
+{ 
+    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Add User</h4>';
+    newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans" method="post">';
+    newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="prefix">Prefix</label><div><select name="prefix" id="prefix" title="Prefix" class="sero-input"><option value="0">--Select--</option><option value="Mr">Mr</option><option value="Mrs">Mrs</option><option value="Dr">Dr</option></select></div></div></div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="firstname" class="col-form-label mandatory-star">First Name</label><div><input type="text" class="sero-input" id="firstname" name="firstname" maxlength="300" title="First Name" value="Joe"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label">Middle Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Middle Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Last Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Last Name" value="Garden"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="suffix">Suffix</label><div><select name="suffix" id="suffix" title="Suffix" class="sero-input"><option value="0">--Select--</option><option value="Jr.">Jr.</option><option value="Sr.">Sr.</option><option value="I">I</option><option value="II">II</option><option value="III">III</option><option value="IV">IV</option><option value="Other">Other</option></select></div></div></div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="emailaddress" class="col-form-label mandatory-star">Email Address</label><div><input type="text" class="sero-input" id="emailaddress" name="emailaddress" maxlength="300" title="Email Address" value="jgarden@email.com"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+
+    newpage = newpage + '<div class="form-group row"><div class="col-md-6 col-xs-12" id="show_hide_password"><label class="mandatory-star" for="Password">Password</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input autocomplete="off" class="form-control p-l-6 required" data-val="true" data-val-regex="Password should be minimum of 8 characters, with combination of at least one uppercase, one lowercase, one number and one symbol." data-val-regex-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&amp;])[A-Za-z\d$@$!%*#?&amp;]{8,50}$" data-val-required="The New Password field is required." id="txtPassword" maxlength="50" name="Password" type="password" />';
+    newpage = newpage + '<span class="input-group-text"><a href="javascript:void(0)" onclick="togglePassword()"><i class="ion-ios7-eye inputGroupCustom eyefontsize"></i></a></span></div>';
+    newpage = newpage + '<div id="passwordValdiationMessage"><p id="length" class="invalid">Minimum <b>8 characters</b></p><p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p><p id="letter" class="invalid">A <b>lowercase</b> letter</p><p id="number" class="invalid">A <b>number</b></p><p id="symbol" class="invalid">A <b>symbol</b></p><p id="match" class="invalid">Match <b>confirm password</b></p></div>';
+    newpage = newpage + '<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span><label class="field-validation-error text-danger" for="errorPassword" id="errorPassword" style="display:none;">Label</label></div>';
+    
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label class="mandatory-star" for="ConfirmPassword">Confirm Password</label>';
+    newpage = newpage + '<div id="dvConPassword" class="input-group"><input class="form-control p-l-6 required" data-val="true" data-val-equalto="Password and Confirm passwords should match" data-val-equalto-other="*.Password" data-val-required="The Confirm Password field is required" id="txtConPassword" maxlength="50" name="ConfirmPassword" type="password" />';
+    newpage = newpage + '<span class="input-group-text"><a href="javascript:void(0)" onclick="toggleConfirmPassword()"><i class="ion-ios7-eye inputGroupCustom eyefontsize"></i></a></span></div>';
+  
+    newpage = newpage + '<div id="passwordConfirmValdiationMessage"><p id="length" class="invalid">Minimum <b>8 characters</b></p><p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p><p id="letter" class="invalid">A <b>lowercase</b> letter</p><p id="number" class="invalid">A <b>number</b></p><p id="symbol" class="invalid">A <b>symbol</b></p><p id="match" class="invalid">Match <b>password</b></p></div>';
+    newpage = newpage + '<span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span><label class="field-validation-error text-danger" for="errorConPassword" id="errorConPassword" style="display:none;">Label</label></div></div>';
+   
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="suffix">Permissions</label><div><select name="permissions" id="permissions" title="Permissions" class="sero-input"><option value="0">--Select--</option><option value="Admin">Admin</option><option value="Normal User">Normal User</option></select></div></div></div></div>';
+
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="feeoptions">Manager</label><div><select name="feeoptions" id="feeoptions" title="Select Action" class="sero-input"><option value="0">--Select--</option><option value="bjones@email.com">bjones@email.com</option><option value="athomas@email.com">athomas@email.com</option><option value="jgarden@email.com">jgarden@email.com</option></select></div></div></div></div>';
+             
+    newpage = newpage + '<div class="form-row justify-content-center"><button type="reset" value="Reset" id="btnReset" class="btn btn-outline-secondary btn-lg width-lg waves-effect waves-light mr-2">Reset</button>';
+    newpage = newpage + '<button type="button" id="btnCancel" value="Cancel" class="btn btn-danger btn-lg width-lg waves-effect waves-light mr-2" onclick="configUsers()">Cancel</button>';
+    newpage = newpage + '<button type="submit" value="Submit" class="btn btn-primary btn-lg width-lg waves-effect waves-light" id="btnSubmit" onclick="addNewUserSuccess()">Submit</button></div>';
+ 
+    newpage = newpage + '</form>';
+    newpage = newpage + '</div></div></div></div>';
+     
+    $('.dashboard-page').html(newpage);
+}
+
+function addFeesDetails()
+{ 
+    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Add Fees Details</h4>';
+    newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans" method="post">';
+    newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
+    //newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Account</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number" value=' + accountNumber + ' readonly><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    //newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name" value="' + name +'" readonly><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    //newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Transaction Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name" value=TR89265078 readonly><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="feeoptions">Fees Type</label><div><select name="feeoptions" id="feeoptions" title="Select Action" class="sero-input"><option value="Flat Fee">Flat Fee</option><option value="Bank Check Return Fee">Bank Check Return Fee</option><option value="Other Fee">Other Fee</option></select></div></div></div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="fee" class="col-form-label mandatory-star">Fee</label><div><input type="text" class="sero-input" id="fee" name="fee" maxlength="300" title="Fee" value="25"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label">Notes</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back" value="Back to list" id="btnBackToList" onclick="configTransFee();">Back</Button>';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add Fees Details" value="Add Fees Details" id="btnSubmit" onclick="addFeesDetailsProcess();">Add Fees Details</button></div>';
+                                    
+    newpage = newpage + '</form>';
+    newpage = newpage + '</div></div></div></div>';
+     
+    $('.dashboard-page').html(newpage);
+}
+
 function addNewNote()
 {   
     var newpage = '<div class="col-lg-12"><div class="card">';
@@ -1661,6 +1936,56 @@ function exportAccounts()
     $('.dashboard-page').html(newpage);
 }
 
+function configTransFee()
+{   
+    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Transaction Fee Config</h5><button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add Fees Details" value="Add Fees Details" id="btnSubmit" onclick="addFeesDetails();">Add Fees Details</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Fees Type</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Fee</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th><th class="k-header k-filterable" data-field="WorkItemId" data-index="5" data-title="Work Item Id" id="621eb0e4-a874-4a73-bc7d-38dd901fa1a9" scope="col" style="display:none"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkItemId-asc">Work Item Id</a></th><th class="k-header k-filterable" data-field="LastUpdatedDate" data-index="6" data-title="Last Updated Date" id="459250c2-1498-4cc8-b90f-e0548461a1bb" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=LastUpdatedDate-asc">Delete</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:100px" /><col style="width:150px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + bankcheckreturn + '</td><td>' + bankcheckreturnfee + '</td><td>' + feeeditbutton + '</td><td>' + feedeletebutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '</div></div></div></div>';
+  
+    $('.dashboard-page').html(newpage);
+}
+
+function configSaveText()
+{
+    var newpage = '<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"><h4 class="pull-left readonly-Name">Text and image configurations are saved in the system.</h4></div>';
+    $('.dashboard-page').html(newpage);
+}
+
+
+function configText()
+{
+    var newpage = '<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"><h4 class="pull-left readonly-Name">Text Configuration</h4></div>';
+    newpage = newpage + '<div class="form-horizontal"><div class="row"><div class="col-sm-12"><div class="card-box s-sc">';
+    newpage = newpage + '<form action="/Config/TextConfigurations" id="frmWhiteLabelConfigurations" method="post"><input name="__RequestVerificationToken" type="hidden" value="Cz--qkjHs7kuq_aM7wUu6tvXBDbUiGZDREjIX0TmhQ-ESiMiyAk3NRgy4e1_4lLC6QtwBKsLALCgvysxx6qwR-jz7ZLdKQunezmQLF4IYPwxD4s6Sk10RSFjhbe0Uvx_bJ-5yYN12B7K1Vvhj5uCGA2" /><input data-val="true" data-val-number="The field ID must be a number." data-val-required="The ID field is required." id="ID" name="ID" type="hidden" value="0" /><input id="LogoFile_Name" name="LogoFile.Name" type="hidden" value="logo.png" /><input id="LogoSmallFile_Name" name="LogoSmallFile.Name" type="hidden" value="logo-small.png" /><input id="LogoDarkFile_Name" name="LogoDarkFile.Name" type="hidden" value="logo-dark.png" /><input id="LogoWhiteFile_Name" name="LogoWhiteFile.Name" type="hidden" value="logo-white.png" /><input id="SealFile_Name" name="SealFile.Name" type="hidden" value="seal.png" /><input id="SignatureFile_Name" name="SignatureFile.Name" type="hidden" value="signature.png" /><div class="row m-b-10">';
+    newpage = newpage + '<div class="col-md-12 col-xs-12"><p class="text-muted font-13 pull-right">* Please fill out all of the fields</p></div></div>';
+    newpage = newpage + '<div id="divMessage" class="alert alert-success m-b-20" style="display:none;"></div><div id="divFailure" class="alert alert-danger m-b-20" style="display:none;"></div>';
+    newpage = newpage + '<div class="form-group"><label class="col-sm-2 col-md-2 col-xs-12 control-label mandatory-star" for="Application_Name">Application Name</label><div class="col-sm-4 col-md-4 col-xs-12 form-group-xs"><input autocomplete="off" class="form-control" id="txtApplicationName" maxlength="100" name="ApplicationName" type="text" value="City Payment Management System" /><div id="dvApplicationNameErrMsg" class="field-validation-error" style="display:none;">This field is required</div></div></div>';
+    newpage = newpage + '<div class="form-group"><label class="col-sm-2 col-md-2 col-xs-12 control-label mandatory-star" for="Application_Type">Application Type</label><div class="col-sm-4 col-md-4 col-xs-12 form-group-xs"><input autocomplete="off" class="form-control" id="txtApplicationType" maxlength="100" name="ApplicationType" type="text" value="CPMS" /><div id="dvApplicationTypeErrMsg" class="field-validation-error" style="display:none;">This field is required</div></div></div>';
+                      
+    newpage = newpage + '<div class="form-group"><label class="col-sm-2 col-md-2 col-xs-12 control-label mandatory-star" for="Application_Client">Application Client</label><div class="col-sm-4 col-md-4 col-xs-12 form-group-xs"><input autocomplete="off" class="form-control" id="txtApplicationClient" maxlength="100" name="ApplicationClient" type="text" value="Kermit" /><div id="dvApplicationClientErrMsg" class="field-validation-error" style="display:none;">This field is required</div></div></div>';
+    newpage = newpage +'<div class="form-group"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-lr-5"><label class="name control-label mandatory-star" for="Upload_Logo">Upload Logo</label></div>';
+    newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-lr-5"><input id="LogoFile_File" name="LogoFile.File" type="file" /></div>';
+    newpage = newpage + '<div class="form-group ml-2 mt-1"><img src="./images/Logo.png" id="imgLogoFile" style="max-height:100px"//></div></div>';
+    
+    newpage = newpage +'<div class="form-group"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-lr-5"><label class="name control-label mandatory-star" for="Upload_Logo">Upload Signature</label></div>';
+    newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-lr-5"><input id="SignatureFile_File" name="LogoFile.File" type="file" /></div>';
+    newpage = newpage + '<div class="form-group ml-2 mt-1"><img src="./images/Signature.png" id="imgLogoFile" style="max-height:100px"//></div></div>';
+    
+    newpage = newpage + '<div class="form-group m-t-30"><div class="col-md-12 col-sm-12 col-xs-12 text-center btnxs"><button type="submit" class="btn btn-primary btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center" name="btnSubmit" title="Save" value="Save" id="btnSubmit" onclick="configSaveText()">Save</button></div></div>';
+    newpage = newpage + '</form></div></div></div></div>';
+    
+    $('.dashboard-page').html(newpage);
+
+}
+
+function configUsers()
+{   
+    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Agency Users</h5><button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add New User" value="Add New User" id="btnSubmit" onclick="addNewUser();">Add New User</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:200px" /><col style="width:150px" /><col style="width:150px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Email Address</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">First Name</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:200px" /><col style="width:150px" /><col style="width:150px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + newuseremailaddress + '</td><td>' + newuserfirstname + '</td><td>' + newusereditbutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '</div></div></div></div>';
+  
+    $('.dashboard-page').html(newpage);
+}
 
 function redirect_AddDocuments() {
 
@@ -1949,6 +2274,10 @@ function updateSidebarMenu(accountNumber, urlOptions, newpage) {
     
 
 
+</script>
+
+<script>
+	kendo.syncReady(function(){jQuery("#LogoFile_File").kendoUpload({"select":onUpload,"multiple":false,"validation":{"allowedExtensions":[".png"],"maxFileSize":5242880}});});
 </script>
 
 <input data-val="true" data-val-required="The Boolean field is required." id="HasAccessToViewCase" name="HasAccessToViewCase" type="hidden" value="False" />
