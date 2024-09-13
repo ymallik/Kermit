@@ -1360,8 +1360,11 @@ function ManualPayment()
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Bank Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Account Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Routing Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="options">Account Type</label><div><select name="options" id="options" title="Select Action" class="sero-input"><option value="0">Checking</option><option value="1">Savings</option></select></div></div></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
     newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
@@ -1377,10 +1380,11 @@ function ECheckPayment()
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Bank Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Account Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Routing Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="options">Account Type</label><div><select name="options" id="options" title="Select Action" class="sero-input"><option value="0">Checking</option><option value="1">Savings</option></select></div></div></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
+    newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
     newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
@@ -1719,7 +1723,6 @@ function addNewUser()
     newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label class="mandatory-star" for="ConfirmPassword">Confirm Password</label>';
     newpage = newpage + '<div id="dvConPassword" class="input-group"><input class="form-control p-l-6 required" data-val="true" data-val-equalto="Password and Confirm passwords should match" data-val-equalto-other="*.Password" data-val-required="The Confirm Password field is required" id="txtConPassword" maxlength="50" name="ConfirmPassword" type="password" />';
     newpage = newpage + '<span class="input-group-text"><a href="javascript:void(0)" onclick="toggleConfirmPassword()"><i class="ion-ios7-eye inputGroupCustom eyefontsize"></i></a></span></div>';
-  
     newpage = newpage + '<div id="passwordConfirmValdiationMessage"><p id="length" class="invalid">Minimum <b>8 characters</b></p><p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p><p id="letter" class="invalid">A <b>lowercase</b> letter</p><p id="number" class="invalid">A <b>number</b></p><p id="symbol" class="invalid">A <b>symbol</b></p><p id="match" class="invalid">Match <b>password</b></p></div>';
     newpage = newpage + '<span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span><label class="field-validation-error text-danger" for="errorConPassword" id="errorConPassword" style="display:none;">Label</label></div></div>';
    
@@ -1851,9 +1854,9 @@ function importAccounts()
     newpage = newpage + '<input type="file" id="importUpload" name="importUpload" class="HistoryFileUpload" multiple accept=".pdf, .xls, .xlsx, .doc, .docx, .jpg, .jpeg, .png, .csv, .mov, .m4a, .webm, .mp4, .m4v, .wmv, .flv, .avi, .mts, .mkv" /></div></div>';
     newpage = newpage + '<div class="form-group col-md-4"></div><div class="form-group col-md-12" style="text-align:right; display:none"><button type="button" value="Download All Docs" title="Download All Documents" class="btn btn-primary btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center" name="buttonType" id="docHistoryDownloadAll">Download All Docs</button></div>';
  
-    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1"><button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnUpdateInvestigationNotes" onclick="onImportSave()">Import</button>';
-    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button></div>';
-    
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnUpdateInvestigationNotes" onclick="onImportSave()">Import</button></div>';
 
     newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h4 class="mb-2" id="view_NotesTitle">Import History</h4></div>';
 
@@ -1890,18 +1893,80 @@ function onExportSave()
     $('.dashboard-page').html(newpage);
 }
 
+// JavaScript function to toggle between Month/Year and From Date/To Date options
+function toggleOptions(selectedOption) {
+    const monthYearOptions = document.getElementById('monthYearOptions');
+    const fromDateToDateOptions = document.getElementById('fromDateToDateOptions');
+    const submitBtn = document.getElementById('btnExportReport');
+    submitBtn.disabled = false;
+
+    if (selectedOption.value === 'monthYear') {
+        monthYearOptions.style.display = 'flex';  // Show Month/Year options
+        fromDateToDateOptions.style.display = 'none';  // Hide From Date/To Date options
+    } else if (selectedOption.value === 'fromDateToDate') {
+        monthYearOptions.style.display = 'none';  // Hide Month/Year options
+        fromDateToDateOptions.style.display = 'flex';  // Show From Date/To Date options
+    }
+}
+
 
 function exportAccounts()
 {   
     var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
     newpage = newpage + '<div id="DocHeader">';
     newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h4 class="mb-2" id="view_NotesTitle">Export Accounts</h4></div>';
+    newpage = newpage + '<br>';
 
-    newpage = newpage + '<div class="form-row" id="dvDocumentHistoryUpload">';
-    newpage = newpage + '<label class="col-form-label" for="options">Month</label><select name="month" id="month" title="Select Action" class="sero-input"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
-    newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>';
-    newpage = newpage + '<label class="col-form-label" for="options">Year</label><select name="year" id="year" title="Select Action" class="sero-input"><option value="2024">2024</option><option value="2023">2023</option></select>';
-    newpage = newpage + '</div></div>';
+    newpage += `
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Select date range option to generate an export report:</label>
+                        
+                            <label>
+                                <input type="radio" name="dateOption" value="monthYear" onclick="toggleOptions(this)">
+                                Month/Year
+                            </label>
+                            <label>
+                                <input type="radio" name="dateOption" value="fromDateToDate" onclick="toggleOptions(this)">
+                                From Date/To Date
+                            </label>
+                        
+                    </div>
+                </div>
+            `;
+
+    newpage = newpage + '<div class="form-group row">';
+    newpage = newpage + '<div id="monthYearOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="options">Month</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<select name="month" id="month" title="Select Action" class="sero-input"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
+    newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div></div>';
+
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label for="options">Year</label>';
+    newpage = newpage + '<div id="dvConPassword" class="input-group">';
+    newpage = newpage + '<select name="year" id="year" title="Select Action" class="sero-input"><option value="2024">2024</option><option value="2023">2023</option></select></div></div>';
+    newpage = newpage + '</div>';
+    newpage = newpage + '<br>';
+
+    //newpage = newpage + '<div class="form-group row">';
+    newpage = newpage + '<div id="fromDateToDateOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="fromdate">From Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="fromdate" maxlength="50" name="fromdate" type="text" value="08/15/2024" placeholder="MM/DD/YYYY" /></div></div>';
+        
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="todate">To Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="todate" maxlength="50" name="todate" type="text" value="08/30/2024" placeholder="MM/DD/YYYY" /></div></div>';
+    newpage = newpage + '</div>';
+    newpage = newpage + '</div>';
+
+
+
+    //newpage = newpage + '<div class="form-row" id="dvDocumentHistoryUpload">';
+    //newpage = newpage + '<label class="col-form-label" for="options">Month</label><select name="month" id="month" title="Select Action" class="sero-input"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
+    //newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>';
+    //newpage = newpage + '<label class="col-form-label" for="options">Year</label><select name="year" id="year" title="Select Action" class="sero-input"><option value="2024">2024</option><option value="2023">2023</option></select>';
+    //newpage = newpage + '</div></div>';
 
     /* const yearSelect = document.getElementById('year');
     const currentYear = new Date().getFullYear();
@@ -1920,9 +1985,9 @@ function exportAccounts()
         
     //newpage = newpage + '<div class="form-group col-md-4"></div><div class="form-group col-md-12" style="text-align:right; display:none"><button type="button" value="Download All Docs" title="Download All Documents" class="btn btn-primary btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center" name="buttonType" id="docHistoryDownloadAll">Download All Docs</button></div>';
  
-    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1"><button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnUpdateInvestigationNotes" onclick="onExportSave()">Export</button>';
-    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button></div>';
-    
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" onclick="onExportSave()" disabled>Export</button></div>';
 
     newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h4 class="mb-2" id="view_NotesTitle">Export History</h4></div>';
 
