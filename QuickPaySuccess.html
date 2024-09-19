@@ -482,7 +482,7 @@
 
             <div id="divValidationMessage">
                 <label class="control-label">Payment is successfully processed for your account.</label>
-                <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Download Receipt" id="btnsearch" onclick="toggleVisibility();">
+                <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Download Receipt" id="btnsearch">
                     Download Receipt
                 </button>
                 
@@ -491,29 +491,54 @@
             <div id="DivSimpleSearch">
                 
                 <div id="licenseSearch">
-                    <div class="form-row">
-                        <div class="form-group col-12">
-                            <label class="control-label">Please enter your email to send receipt</label>
+                    <!--<div class="form-row">-->
+                        
+                            <label class="control-label">If you would like to receive the receipt in your email, please enter your email in the below text box and click "SEND".</label>
+                        
+                    <div class="form-group row align-items-center"">                        
+                        
+                        <div class="col-md-6 col-xs-12">
                             <!--<input class="form-control" data-val="true" id="txtRegOrLicNum" name="Simplesearch.RegOrLicId" title="E-Mail" type="text" value="" />-->
-                            <input class="form-control" id="txtRegOrLicNum" name="Simplesearch.RegOrLicId" title="E-Mail" type="text" value="" />
-                            <!--<span class="field-validation-valid" data-valmsg-for="Simplesearch.RegOrLicId" data-valmsg-replace="true"></span>-->
-                            <div class="text-center"><button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Send Email" id="btnsearch" onclick="toggleVisibility();">
+                            <div id="dvPassword" class="input-group">
+                                <input class="form-control" id="txtRegOrLicNum" name="Simplesearch.RegOrLicId" placeholder="email" title="E-Mail" type="text" value="" />
+                            </div>
+                                <!--<span class="field-validation-valid" data-valmsg-for="Simplesearch.RegOrLicId" data-valmsg-replace="true"></span>-->
+                            <!--<div class="text-center">-->
+                            <!--    <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Send Email" id="btnsearch" onclick="toggleVisibility();">
+                                Send
+                            </button>-->
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <div id="dvPassword1" class="input-group">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Send Email" id="btnsearch">
                                 Send
                             </button>
-                        </div>
-                            
-                        </div>
+                            </div>
+                        </div>                 
+                        
                         
                     </div>
 
-                    <div class="form-group col-12">
-                        <label class="control-label">As a registered user of CPMS, you can download receipts and view transaction history. Please <a href="Signup.html">click here</a> to register in the system.</label>
+                    <div id="divValidationMessage">
+                        <label class="control-label">Would you like to create an account to view transaction history and download receipts?</label>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Create an Account" id="btnsearch" onclick="toggleVisibility();">
+                            Create An Account
+                        </button>
+                        
                     </div>
+
+                    <!--<label class="control-label">As a registered user of CPMS, you can download receipts and view transaction history. Would you like to create an account? </label>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Send Email" id="btnsearch" onclick="toggleVisibility();">
+                        Create Account
+                    </button>
+                    If Yes, please click Please <a href="Signup.html">click here</a> to register in the system.</label>-->
+                    
                     <div class="text-center" style="display: block">
                     <!--<button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Search" id="btnsearch" onclick="toggleVisibility();">
                         Send Receipt
                     </button>-->
-                    <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Home Page" id="btnsearch" onclick="toggleVisibility();">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light w-lg m-b-5 xs-pull-center" title="Home Page" id="btnsearch" onclick="homepage();">
                         Home Page
                     </button>
                     </div>
@@ -531,6 +556,10 @@
 
 <script>
     function toggleVisibility() {
+        window.location.href = 'signup.html';
+    }
+
+    function homepage() {
         window.location.href = 'index.html';
     }
 
