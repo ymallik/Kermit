@@ -1446,7 +1446,12 @@ var newusereditbutton = '';
 
 function Overview()
 {
-    var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Account Information</h5></div></div>';
+    var newpage = '';
+
+    newpage = buildmenu(newpage);
+
+    //newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Account Information</h5></div></div>';
+    newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Overview</h5></div></div>';
     newpage = newpage + '<div class="card-body"><div class="form-row"><div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center">';
     newpage = newpage + '<i class="info-card-icon ion-pound m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Account #</p><h5 class="info-card-h5 mt-0 value">' + accountNumber + '</h5></div></div></div>';
     newpage = newpage + '<div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center"><i class="info-card-icon ion-ios7-compose m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Balance</p>';
@@ -1468,7 +1473,11 @@ function Overview()
 
 function errorValidate_overrule()
 {
-    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Errors & Warnings</h5></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Errors & Warnings</h5></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Errors & Warnings</h5></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
     newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Warning Type</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Message</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab7" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Event Date</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + validationtype + '</td><td>' + validationmessage + '</td><td>' + overruledby + '</td></tr><tr class="k-no-data"><!--<td colspan="6">--><td>Error</td><td>Account disconnected again</td><td>02-23-2023</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
     newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt-4  p-lr-5"><button class="btn btn-inverse btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center exportpdf" type="button" id="btn-History-Back" onclick="errorValidate()">Back</button></div>';
 
@@ -1493,7 +1502,10 @@ function HistoryClick()
     //var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">History</h5></div></div>';
     //newpage = newpage + '</div></div></div>';
 
-    var newpage = '<div class="row" ><div class="col-lg-12" id="dvComWorkflowHistory"><div class="card"><div class="card-header border-bottom bg-transparent"><h5 class="sero-headline6 text-navy mb-0">History</h5></div><div class="card-body"><div class="form-row" id="WorkFlowGrid"></div>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+    //newpage = '<div class="row" ><div class="col-lg-12" id="dvComWorkflowHistory"><div class="card"><div class="card-header border-bottom bg-transparent"><h5 class="sero-headline6 text-navy mb-0">History</h5></div><div class="card-body"><div class="form-row" id="WorkFlowGrid"></div>';
+    newpage += '<div class="card-header border-bottom bg-transparent"><h5 class="sero-headline6 text-navy mb-0">History</h5></div><div class="card-body"><div class="form-row" id="WorkFlowGrid"></div>';
     newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:150px" /><col style="width:200px" /><col style="width:160px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Action</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Notes</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab7" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Updated By</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Updated Date</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:150px" /><col style="width:200px" /><col style="width:160px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + source + '</td><td>' + notes + '</td><td>' + addedby + '</td><td>' + addedon +' </td><tr class="k-no-data"><!--<td colspan="6">--><td>' + docnotes + '</td><td>' + docname + '</td><td>' + uploadby +' </td><td>' + uploaddate + '</td></tr></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div><script>';
 
     newpage = newpage +'</div></div></div></div>';
@@ -1503,12 +1515,16 @@ function HistoryClick()
 
 function CashPayment()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Cash Payment</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Cash Payment</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Cash Payment</h4>';
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
-    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return PaymentOption();">Back</Button>';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Cash Payment" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
     newpage = newpage + '</form>';
     newpage = newpage + '</div></div></div></div>';
@@ -1519,7 +1535,11 @@ function CashPayment()
 
 function ManualPayment()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Manual Check Payment</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Manual Check Payment</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Manual Check Payment</h4>';
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Bank Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
@@ -1528,8 +1548,8 @@ function ManualPayment()
     newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="options">Account Type</label><div><select name="options" id="options" title="Select Action" class="sero-input"><option value="0">Checking</option><option value="1">Savings</option></select></div></div></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
-    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return PaymentOption();">Back</Button>';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Manual Payment" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
     newpage = newpage + '</form>';
     newpage = newpage + '</div></div></div></div>';
@@ -1539,7 +1559,11 @@ function ManualPayment()
 
 function ECheckPayment()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Electronic Check Payment</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Electronic Check Payment</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Electronic Check Payment</h4>';
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Bank Name</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
@@ -1548,8 +1572,8 @@ function ECheckPayment()
     newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="options">Account Type</label><div><select name="options" id="options" title="Select Action" class="sero-input"><option value="0">Checking</option><option value="1">Savings</option></select></div></div></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Check Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
-    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return PaymentOption();">Back</Button>';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Electronic Check Payment" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
     newpage = newpage + '</form>';
     newpage = newpage + '</div></div></div></div>';
@@ -1560,7 +1584,11 @@ function ECheckPayment()
 
 function CreditCardProcess()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Your payment has been successfully processed for your account.</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Your payment has been successfully processed for your account.</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Your payment has been successfully processed for your account.</h4>';
     /* newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Card Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
@@ -1578,7 +1606,10 @@ function CreditCardProcess()
 
 function CreditCardPayment()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Credit Card Payment</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Credit Card Payment</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Credit Card Payment</h4>';
     newpage = newpage + '<div id="newForm"><form id="frmFeesPerTrans1" method="post">';
     newpage = newpage + '<div class="row text-right"><div class="col-12"><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Card Number</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Account Number"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
@@ -1586,8 +1617,8 @@ function CreditCardPayment()
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">CVV</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Name on Card</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
     newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Balance</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Balance Amount" value=' + balance +'><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
-    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Payment()();">Back</Button>';
-    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
+    newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return PaymentOption();">Back</Button>';
+    newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Creditcard Payment" id="btnSubmit" onclick="return CreditCardProcess();">Continue</button></div>';
                                        
     newpage = newpage + '</form>';
     newpage = newpage + '</div></div></div></div>';
@@ -1616,7 +1647,11 @@ function paymentProcess() {
 
 function refundProcess()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Refund has been successfully processed for your account.</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Refund has been successfully processed for your account.</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Refund has been successfully processed for your account.</h4>';
     newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="return CreditCardProcess();">Download Receipt</button></div>';
 
     newpage = newpage + '</div></div></div></div>';
@@ -1626,7 +1661,11 @@ function refundProcess()
 
 function paymentStatusUpdate()
 {
-    var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Payment details are successfully updated for your account.</h4>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Payment details are successfully updated for your account.</h4>';
+    newpage += '<div class="card-body"><h4 class="mb-3">Payment details are successfully updated for your account.</h4>';
     newpage = newpage + '</div></div></div></div>';
   
     $('.dashboard-page').html(newpage);
@@ -1634,15 +1673,20 @@ function paymentStatusUpdate()
 
 function Update()
 {
+    var newpage = '';
+    newpage = buildmenu(newpage);
+    
     if(status == "Disconnect")
     {
-        var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        newpage += '<div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
         newpage = newpage + '</div></div></div></div>';
     }
     else
     {       
-        var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body">';
-        newpage = `<div id="divValidationMessage" class="alert alert-danger">
+        //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body">';
+        newpage += '<div class="card-body">';
+        newpage += `<div id="divValidationMessage" class="alert alert-danger">
                 Use this screen to update the payment status for the selected account. For example, if a payment is made by manual check, update the status to Paid/Open once the check is cleared.            
             </div>`;
         newpage += '<h4 class="mb-3">Payment Status Update</h4>';
@@ -1661,7 +1705,7 @@ function Update()
                             </div> `;
         
         newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Overview();">Back</Button>';
-        newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="paymentStatusUpdate();">Update</button></div>';
+        newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Update Payment Status" id="btnSubmit" onclick="paymentStatusUpdate();">Update</button></div>';
                                         
         newpage = newpage + '</form>';
         newpage = newpage + '</div></div></div></div>';
@@ -1672,9 +1716,12 @@ function Update()
 
 function PaymentOption()
 {
+    var newpage = '';
+    newpage = buildmenu(newpage);
     if(status == "Disconnect")
     {
-        var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        newpage += '<div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
         newpage = newpage + '</div></div></div></div>';
     }
     else
@@ -1694,7 +1741,8 @@ function PaymentOption()
         newpage = newpage + '</div></div></div></div>'; */
     
 
-        var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Payment</h5></div></div>';
+        //var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Payment</h5></div></div>';
+        newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Payment</h5></div></div>';
         newpage = newpage + '<div class="card-body"><div class="form-row"><div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center">';
         newpage = newpage + '<i class="info-card-icon ion-pound m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Account #</p><h5 class="info-card-h5 mt-0 value">' + accountNumber + '</h5></div></div></div>';
         newpage = newpage + '<div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center"><i class="info-card-icon ion-ios7-compose m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Balance</p>';
@@ -1841,15 +1889,20 @@ function Payment()
 
 function Refund()
 {
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
     if(status == "Disconnect")
     {
-        var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
+        newpage += '<div class="card-body"><h4 class="mb-3">Account Status is Disconnect. Please contact Kermit City administration.</h4>';
         newpage = newpage + '</div></div></div></div>';
     }
     else
     {
-        var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body">';
-        newpage = `<div id="divValidationMessage" class="alert alert-danger">
+        //var newpage = '<div class="row"><div class="col-lg-12"><div class="card"><div class="card-body">';
+        newpage += '<div class="card-body">';
+        newpage += `<div id="divValidationMessage" class="alert alert-danger">
                 Use this screen to refund the amount for the selected account either through card/cash.            
             </div>`;
         newpage += '<h4 class="mb-3">Refund</h4>';
@@ -1868,7 +1921,7 @@ function Refund()
         newpage = newpage + '<div class="form-row"><div class="form-group col-12"><label for="AOBJ" class="col-form-label mandatory-star">Notes</label><div><input type="text" class="sero-input" id="txtAOBJCode" name="AOBJ" maxlength="300" title="Name"><div class="field-validation-error" style="display: none" id="lblAOBJErrMsg"></div></div</div></div>';
      
         newpage = newpage + '<div class="form-row d-flex justify-content-end mt-3"><button type="button" class="btn btn-outline-secondary btn-lg width-xl waves-effect waves-light mr-2" name="btnBackToList" title="Back to list" value="Back to list" id="btnBackToList" onclick="return Overview();">Back</Button>';
-        newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Add Fees Details" id="btnSubmit" onclick="refundProcess();">Update</button></div>';
+        newpage = newpage + '<button type="button" class="btn btn-primary btn-lg width-xl waves-effect" name="btnSubmit" title="Add" value="Refund" id="btnSubmit" onclick="refundProcess();">Update</button></div>';
                                         
         newpage = newpage + '</form>';
         newpage = newpage + '</div></div></div></div>';
@@ -1894,6 +1947,9 @@ function getCurrentDateUSFormat() {
 
 function addUserNote()
 {
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
     source = document.getElementById("NoteTypeId").value;
     notes = document.getElementById("txtEnterNotes").value;
     addedby = 'alberto.chargoy@tabc.gov2biz.com';
@@ -1901,7 +1957,8 @@ function addUserNote()
     editbutton = '<a name="btnEdit" title="Edit" id="btnEdit"><i class="ion-compose"></i></a>';
     deletebutton = '<a name="btnDelete" class="text-danger" title="Delete" id="btnDelete"><i class="ion-ios7-trash-outline"></i></a>';
 
-    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    //var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
     newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:150px" /><col style="width:250px" /><col style="width:100px" /><col style="width:100px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Source</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Note</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Added On</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Added By</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th><th class="k-header k-filterable" data-field="WorkItemId" data-index="5" data-title="Work Item Id" id="621eb0e4-a874-4a73-bc7d-38dd901fa1a9" scope="col" style="display:none"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkItemId-asc">Work Item Id</a></th><th class="k-header k-filterable" data-field="LastUpdatedDate" data-index="6" data-title="Last Updated Date" id="459250c2-1498-4cc8-b90f-e0548461a1bb" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=LastUpdatedDate-asc">Delete</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:150px" /><col style="width:250px" /><col style="width:100px" /><col style="width:100px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + source + '</td><td>' + notes + '</td><td>' + addedon + '</td><td>' + addedby +' </td><td>' + editbutton + '</td><td>' + deletebutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div><script>';
     newpage = newpage + '</div></div></div></div>';
   
@@ -2078,7 +2135,10 @@ function hidenotes()
 }
 function addNewNote()
 {   
-    var newpage = '<div class="col-lg-12"><div class="card">';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="col-lg-12"><div class="card">';
     newpage = newpage + '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Add New Note</h5><p class="text-danger"><i class="ion-asterisk form-asterisk"></i> Required</p></div></div>';
     newpage = newpage + '<div class="card-body">';
     newpage = newpage + '<div class="col-md-12"><label for="NoteTypeId" class="col-form-label mandatory-star readonly-Name">Note Type</label><div class="col-sm-12 col-md-12 col-xs-12 m-t-10" aria-required="true" aria-describedby="ddlNotes"><select id="NoteTypeId" name="NoteTypeId" class="sero-input" title="Type" onfocus="shownotes();" onblur="hidenotes();"><option value="General">General</option><option value="Phone CaLL">Phone Call</option><option value="Email">Email</option><option value="Fax">Fax</option><option value="In Meeting">In Meeting</option></select>';
@@ -2457,8 +2517,11 @@ function resetDocument()
 }
 function DocumentsUpload()
 {   
-    var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
-    newpage = newpage + '<div id="DocHeader">';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card">';
+    newpage = newpage + '<div class="card-body"><div id="DocHeader">';
     newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h4 class="mb-2" id="view_NotesTitle">Documents</h4><div class="media float-right"><div class="mr-3 align-self-center"><i class="info-card-icon ion-pound m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Account</p><h5 class="info-card-h5 mt-0 ml-1 value" name="viewRecordId" id="viewRecordId">' + accountNumber + ' </h5></div></div></div>';
     newpage = newpage + '<div id="addDocumentsbtn_view"><div class="form-group text-right mt-1"><button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="addNotes" onclick="redirect_AddDocuments()">Add Document</button></div></div>';
     newpage = newpage + '</div';
@@ -2486,11 +2549,133 @@ function DocumentsUpload()
 
 function Notes()
 {   
-    var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    var newpage = '';
+    newpage = buildmenu(newpage);
+
+    //var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
+    newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Notes</h5><button type="button" value="Add New Rcord" title="Add New Record" class="btn btn-primary" id="btnAddNewNote" onclick="return addNewNote();">Add New Record</button></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
     newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:150px" /><col style="width:200px" /><col style="width:150px" /><col style="width:250px" /><col style="width:100px" /><col style="width:100px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Source</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Note</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Added On</a></th><th class="k-header k-filterable" data-field="WorkitemSubStatus" data-index="3" data-title="Sub Status" id="0898f503-e352-487a-b5e6-ea1a9459c194" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkitemSubStatus-asc">Added By</a></th><th class="k-header k-filterable" data-field="DaysInQueue" data-index="4" data-title="Age" id="89bc5319-c934-4d9f-92b2-c1a89343e214" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=DaysInQueue-asc">Edit</a></th><th class="k-header k-filterable" data-field="WorkItemId" data-index="5" data-title="Work Item Id" id="621eb0e4-a874-4a73-bc7d-38dd901fa1a9" scope="col" style="display:none"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=WorkItemId-asc">Work Item Id</a></th><th class="k-header k-filterable" data-field="LastUpdatedDate" data-index="6" data-title="Last Updated Date" id="459250c2-1498-4cc8-b90f-e0548461a1bb" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=LastUpdatedDate-asc">Delete</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:150px" /><col style="width:200px" /><col style="width:150px" /><col style="width:250px" /><col style="width:100px" /><col style="width:100px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + source + '</td><td>' + notes + '</td><td>' + addedon + '</td><td>' + addedby +' </td><td>' + editbutton + '</td><td>' + deletebutton + '</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div><script>';
     newpage = newpage + '</div></div></div></div>';
   
     $('.dashboard-page').html(newpage);
+}
+
+function buildmenu(newpage)
+{
+    newpage += '<div class="form-row"><div class="col-12"><div class="card">';
+
+    newpage += ` <nav class="navbar navbar-expand-lg navbar-light">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"> `;
+    newpage += '<div class="card-header border-bottom bg-transparent w-100">';
+    newpage += ` 
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown pub-menu-item dmenu">
+                    <div class="">
+                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="Overview()">Overview</a>
+                    </div>
+            </li> `;
+
+    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+                    <a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="">
+                            Notes & Docs
+                        </span>
+                        <span class="pull-right">
+                            <i class="ion-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu   colMenu  sm-menu" aria-labelledby="Apps">
+                            <a href="#" onclick="Notes()">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li class="pub-menu-item colMenu_item">
+                                        <i class="ion-ios7-paper-outline pub-menu-icon" aria-hidden="true"></i>
+                                        <div class="d-grid">
+                                            <p class="pub-menu-text dropdown-item">Notes</p>
+                                            <!--<span style="color: #476b6b; " class="pub-menu-subtext">Import the account records.</span>-->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                            <a href="#" onclick="DocumentsUpload()">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li class="pub-menu-item colMenu_item">
+                                        <i class="ion-document pub-menu-icon" aria-hidden="true"></i>
+                                        <div class="d-grid">
+                                            <p class="pub-menu-text dropdown-item">Documents</p>
+                                            <!--<span style="color: #476b6b; " class="pub-menu-subtext">Export the account records.</span>-->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                    </div>
+            </li> `;
+
+    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+                    <div class="">
+                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="HistoryClick()">History</a>
+                    </div>
+            </li> `;
+
+    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+            <a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="">
+                    Actions
+                </span>
+                <span class="pull-right">
+                    <i class="ion-chevron-down"></i>
+                </span>
+            </a>
+            <div class="dropdown-menu   colMenu  sm-menu" aria-labelledby="Apps">
+                    <a href="#" onclick="PaymentOption()">
+                        <ul class="list-unstyled megamenu-list">
+                            <li class="pub-menu-item colMenu_item">
+                                <!--<i class="ion-ios7-folder-outline pub-menu-icon" aria-hidden="true"></i>-->
+                                <i class="ion-card pub-menu-icon" aria-hidden="true"></i>                                
+                                <div class="d-grid">
+                                    <p class="pub-menu-text dropdown-item">Payment</p>
+                                    <!--<span style="color: #476b6b; " class="pub-menu-subtext">Import the account records.</span>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </a>
+                    <a href="#" onclick="Update()">
+                        <ul class="list-unstyled megamenu-list">
+                            <li class="pub-menu-item colMenu_item">
+                                <i class="ion-ios7-compose-outline pub-menu-icon" aria-hidden="true"></i>
+                                <div class="d-grid">
+                                    <p class="pub-menu-text dropdown-item">Update Payment Status</p>
+                                    <!--<span style="color: #476b6b; " class="pub-menu-subtext">Export the account records.</span>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </a>
+                    <a href="#" onclick="Refund()">
+                        <ul class="list-unstyled megamenu-list">
+                            <li class="pub-menu-item colMenu_item">
+                                <i class="ion-ios7-undo-outline pub-menu-icon" aria-hidden="true"></i>
+                                <div class="d-grid">
+                                    <p class="pub-menu-text dropdown-item">Refund</p>
+                                    <!--<span style="color: #476b6b; " class="pub-menu-subtext">Export the account records.</span>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </a>
+            </div>
+    </li> `;
+
+    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+                    <div class="">
+                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="errorValidate_overrule()">Error & Warning</a>
+                    </div>
+            </li> `;
+
+    newpage += '</ul></div></div></nav>';
+
+    return newpage;
+
 }
 
 function configTransFee()
@@ -2529,7 +2714,16 @@ function configTransFee()
             }
 
             var rowContent = $(this).html(); // get the content of the clicked row
-            var newpage = '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Account Information</h5></div></div>';
+
+            var newpage = '';
+
+            newpage = buildmenu(newpage);
+ 
+            //newpage += '</div></div></div>';
+
+                        
+            //newpage += '<div class="form-row"><div class="col-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Account Information</h5></div></div>';
+            newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Overview</h5></div></div>';
             newpage = newpage + '<div class="card-body"><div class="form-row"><div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center">';
             newpage = newpage + '<i class="info-card-icon ion-pound m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Account #</p><h5 class="info-card-h5 mt-0 value">' + accountNumber + '</h5></div></div></div>';
             newpage = newpage + '<div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center"><i class="info-card-icon ion-ios7-compose m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Balance</p>';
@@ -2544,6 +2738,8 @@ function configTransFee()
             newpage = newpage + '<div class="col-lg-4 col-sm-4"><div class="media mt-3"><div class="mr-2 align-self-center"><i class="info-card-icon ion-ios7-calendar m-0 text-primary"></i></div><div class="media-body overflow-auto"><p class="mb-1">Paid Through</p><h5 class="mt-0 value">' + paymentThrough + '</h5></div></div></div>';
 
             newpage = newpage + '</div></div></div>';
+            
+
   //$('.dashboard-page').html(newpage); // overwrite the dashboard-page div with the row content
 
             var urlOptions = [
@@ -2614,8 +2810,8 @@ function configTransFee()
 
 function updateSidebarMenu(accountNumber, urlOptions, newpage) {
     
-    $('#side-menu').empty(); // clear the existing menu items
-    $('#side-menu').append('<li class="sidebar-title mt-0 liWorkItemType">Acc #: ' + accountNumber + '</li>');
+    //$('#side-menu').empty(); // clear the existing menu items
+    //$('#side-menu').append('<li class="sidebar-title mt-0 liWorkItemType">Acc #: ' + accountNumber + '</li>');
 
     $.each(urlOptions, function(index, urlOption) {
         var menuItem = $('<li>');
@@ -2677,7 +2873,7 @@ function updateSidebarMenu(accountNumber, urlOptions, newpage) {
             menuItem.append(menuLink);
         }
 
-        $('#side-menu').append(menuItem);
+        //$('#side-menu').append(menuItem);
     });
 
     $('.dashboard-page').html(newpage); // overwrite the dashboard-page div with the row content
