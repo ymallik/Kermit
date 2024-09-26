@@ -645,46 +645,46 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu   colMenu  sm-menu" aria-labelledby="Reports">
-                                    <a href="/PrivateUser/TABCApplicationStatusReport">
+                                    <a href="#" onclick="importReport()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-ios7-speedometer pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
-                                                    <p class="pub-menu-text dropdown-item">TABC Application Status</p>
-                                                    <span style="color: #476b6b; " class="pub-menu-subtext">TABC Application Status</span>
+                                                    <p class="pub-menu-text dropdown-item">Import Report</p>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Import Report</span>
                                                 </div>
                                             </li>
                                         </ul>
                                     </a>
-                                    <a href="/PrivateUser/LicensingApplicationFinancialReport">
+                                    <a href="#" onclick="transactionReport()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-ios7-speedometer pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
-                                                    <p class="pub-menu-text dropdown-item">Financial Report</p>
-                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Financial Report</span>
+                                                    <p class="pub-menu-text dropdown-item">Transaction Report</p>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Transaction Report</span>
                                                 </div>
                                             </li>
                                         </ul>
                                     </a>
-                                    <a href="/PrivateUser/LicensingApplicationDelinquentReport">
+                                    <a href="#" onclick="exportReport()">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-ios7-speedometer pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
-                                                    <p class="pub-menu-text dropdown-item">Delinquent Report</p>
-                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Delinquent Report</span>
+                                                    <p class="pub-menu-text dropdown-item">Export Report</p>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Export Report</span>
                                                 </div>
                                             </li>
                                         </ul>
                                     </a>
-                                    <a href="/PrivateUser/LicensingRenewalNotificationReport">
+                                    <a href="#">
                                         <ul class="list-unstyled megamenu-list">
                                             <li class="pub-menu-item colMenu_item">
                                                 <i class="ion-ios7-speedometer pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
-                                                    <p class="pub-menu-text dropdown-item">Renewal Letters Sent Report</p>
-                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Renewal Letters Sent Report</span>
+                                                    <p class="pub-menu-text dropdown-item">Disconnect Account Report</p>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Disconnect Account Report</span>
                                                 </div>
                                             </li>
                                         </ul>
@@ -1478,7 +1478,7 @@ function errorValidate_overrule()
 
     //var newpage = '<div class="row" id="dvNotesGrid"><div class="col-lg-12"><div class="card"><div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Errors & Warnings</h5></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
     newpage += '<div class="card-header border-bottom bg-transparent"><div class="form-row d-flex justify-content-between align-items-center"><h5 class="sero-headline6 text-navy mb-0">Errors & Warnings</h5></div></div><div class="card-body"><div class="form-row" id="noteResult"></div>';
-    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Warning Type</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Message</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab7" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Event Date</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + validationtype + '</td><td>' + validationmessage + '</td><td>' + overruledby + '</td></tr><tr class="k-no-data"><!--<td colspan="6">--><td>Error</td><td>Account disconnected again</td><td>02-23-2023</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
+    newpage = newpage + '<div class="k-widget k-grid" id="CommonPrivateDashBoardItems" style="height: auto;"><div class="k-header k-grid-toolbar k-grid-top"><button class="k-button k-button-icontext k-grid-excel" type="button"><span class="k-icon k-i-excel"></span>Export to Excel</button></div><div class="k-grouping-header">Drag a column header and drop it here to group by that column</div><div class="k-grid-header"><div class="k-grid-header-wrap"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><thead class="k-grid-header"><tr><th class="k-header k-filterable" data-field="ApplicationType" data-index="0" data-title="Type" id="061012e1-8f86-43b7-8356-121483470a7c" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationType-asc">Warning Type</a></th><th class="k-header k-filterable" data-field="ApplicationId" data-index="1" data-title="Item #" id="0b9a85fe-5d6d-4d16-b1bb-70bc67c447fe" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationId-asc">Message</a></th><th class="k-header k-filterable" data-field="ApplicationSubType" data-index="2" data-title="Description" id="faed379e-b40e-43db-a2ba-0aa206e34fab7" scope="col"><a aria-label="Filter" class="k-grid-filter" href="javascript:void(0)"><span class="k-icon k-i-filter" title="Filter"></span></a><a class="k-link" href="/PrivateUser/SelectCommonPrivateDashBoardItems?CommonPrivateDashBoardItems-sort=ApplicationSubType-asc">Event Date</a></th></tr></thead></table></div></div><div class="k-grid-content k-auto-scrollable" style="height:200px"><table><colgroup><col style="width:100px" /><col style="width:200px" /><col style="width:100px" /></colgroup><tbody><tr class="k-no-data"><!--<td colspan="6">--><td>' + validationtype + '</td><td>' + validationmessage + '</td><td>' + overruledby + '</td></tr><tr class="k-no-data"><!--<td colspan="6">--><td>Warning</td><td>Account disconnected</td><td>07-12-2020</td></tr></tbody></table></div><div class="k-pager-wrap k-grid-pager"><a aria-label="Go to the first page" class="k-link k-pager-nav k-state-disabled k-pager-first" data-page="1" href="#" title="Go to the first page"><span class="k-icon k-i-arrow-end-left"></span></a><a aria-label="Go to the previous page" class="k-link k-pager-nav k-state-disabled" data-page="0" href="#" title="Go to the previous page"><span class="k-icon k-i-arrow-60-left"></span></a><ul class="k-pager-numbers k-reset"><li><span class="k-state-selected" data-page="1">1</span></li></ul><a aria-label="Go to the next page" class="k-link k-pager-nav k-state-disabled" data-page="2" href="#" title="Go to the next page"><span class="k-icon k-i-arrow-60-right"></span></a><a aria-label="Go to the last page" class="k-link k-pager-nav k-state-disabled k-pager-last" data-page="1" href="#" title="Go to the last page"><span class="k-icon k-i-arrow-end-right"></span></a><span class="k-pager-sizes k-label"><select><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>items per page</span><span class="k-pager-info k-label">No items to display</span></div></div>';
     newpage = newpage + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mt-4  p-lr-5"><button class="btn btn-inverse btn-custom w-lg waves-effect waves-light m-b-5 xs-pull-center exportpdf" type="button" id="btn-History-Back" onclick="errorValidate()">Back</button></div>';
 
     newpage = newpage + '</div></div></div></div>';
@@ -2294,6 +2294,247 @@ function toggleOptions(selectedOption) {
     }
 }
 
+function transactionReport()
+{  
+    updatesidemenu();
+
+    var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
+    newpage = newpage + '<div id="DocHeader">';
+    newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h3 class="mb-2" id="view_NotesTitle">Transaction Report</h3></div>';
+    newpage = newpage + '<br>';
+
+    newpage += `
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label><h4>Select date range option to generate a transaction report:</h4></label>
+                        
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="monthYear" onclick="toggleOptions(this)">
+                                Month/Year</h4>
+                            </label>
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="fromDateToDate" onclick="toggleOptions(this)">
+                                From Date/To Date</h4>
+                            </label>
+                        
+                    </div>
+                </div>
+            `;
+
+    newpage = newpage + '<div class="form-group row">';
+    newpage = newpage + '<div id="monthYearOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="options">Month</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<select name="month" id="month" title="Select Action" class="sero-input" onfocus="showmonths();" onblur="hidemonths();"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
+    newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div></div>';
+
+    newpage += `<div id="displayMonths">
+                                <p id="length" class="invalid">January</p>
+                                <p id="capital" class="invalid">February</p>
+                                <p id="capital" class="invalid">March</p>
+                                <p id="capital" class="invalid">April</p>
+                                <p id="capital" class="invalid">May</p>
+                                <p id="capital" class="invalid">June</p>
+                                <p id="capital" class="invalid">July</p>
+                                <p id="capital" class="invalid">August</p>
+                                <p id="capital" class="invalid">September</p>
+                                <p id="capital" class="invalid">October</p>
+                                <p id="capital" class="invalid">Novemebr</p>
+                                <p id="capital" class="invalid">December</p>                                                                                                     
+                            </div> `;
+
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label for="options">Year</label>';
+    newpage = newpage + '<div id="dvConPassword" class="input-group">';
+    newpage = newpage + '<select name="year" id="year" title="Select Action" class="sero-input" onfocus="showyear();" onblur="hideyear();"><option value="2024">2024</option><option value="2023">2023</option></select></div></div>';
+    newpage = newpage + '</div>';
+
+    newpage += `<div id="displayYear">
+                                <p id="length" class="invalid">2024</p>
+                                <p id="capital" class="invalid">2023</p>                                                                                                                                    
+                            </div> `;
+    newpage = newpage + '<br>';
+
+    newpage = newpage + '<div id="fromDateToDateOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="fromdate">From Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="fromdate" maxlength="50" name="fromdate" type="text" value="08/15/2024" placeholder="MM/DD/YYYY" /></div></div>';
+        
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="todate">To Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="todate" maxlength="50" name="todate" type="text" value="08/30/2024" placeholder="MM/DD/YYYY" /></div></div>';
+    newpage = newpage + '</div>';
+    newpage = newpage + '</div>';
+
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" disabled>Generate</button></div>';
+
+    newpage = newpage + '</div></div></div></div>';
+    
+    $('.dashboard-page').html(newpage);
+}
+
+function exportReport()
+{  
+    updatesidemenu();
+
+    var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
+    newpage = newpage + '<div id="DocHeader">';
+    newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h3 class="mb-2" id="view_NotesTitle">Export Report</h3></div>';
+    newpage = newpage + '<br>';
+
+    newpage += `
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label><h4>Select date range option to generate an export report:</h4></label>
+                        
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="monthYear" onclick="toggleOptions(this)">
+                                Month/Year</h4>
+                            </label>
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="fromDateToDate" onclick="toggleOptions(this)">
+                                From Date/To Date</h4>
+                            </label>
+                        
+                    </div>
+                </div>
+            `;
+
+    newpage = newpage + '<div class="form-group row">';
+    newpage = newpage + '<div id="monthYearOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="options">Month</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<select name="month" id="month" title="Select Action" class="sero-input" onfocus="showmonths();" onblur="hidemonths();"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
+    newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div></div>';
+
+    newpage += `<div id="displayMonths">
+                                <p id="length" class="invalid">January</p>
+                                <p id="capital" class="invalid">February</p>
+                                <p id="capital" class="invalid">March</p>
+                                <p id="capital" class="invalid">April</p>
+                                <p id="capital" class="invalid">May</p>
+                                <p id="capital" class="invalid">June</p>
+                                <p id="capital" class="invalid">July</p>
+                                <p id="capital" class="invalid">August</p>
+                                <p id="capital" class="invalid">September</p>
+                                <p id="capital" class="invalid">October</p>
+                                <p id="capital" class="invalid">Novemebr</p>
+                                <p id="capital" class="invalid">December</p>                                                                                                     
+                            </div> `;
+
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label for="options">Year</label>';
+    newpage = newpage + '<div id="dvConPassword" class="input-group">';
+    newpage = newpage + '<select name="year" id="year" title="Select Action" class="sero-input" onfocus="showyear();" onblur="hideyear();"><option value="2024">2024</option><option value="2023">2023</option></select></div></div>';
+    newpage = newpage + '</div>';
+
+    newpage += `<div id="displayYear">
+                                <p id="length" class="invalid">2024</p>
+                                <p id="capital" class="invalid">2023</p>                                                                                                                                    
+                            </div> `;
+    newpage = newpage + '<br>';
+
+    newpage = newpage + '<div id="fromDateToDateOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="fromdate">From Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="fromdate" maxlength="50" name="fromdate" type="text" value="08/15/2024" placeholder="MM/DD/YYYY" /></div></div>';
+        
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="todate">To Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="todate" maxlength="50" name="todate" type="text" value="08/30/2024" placeholder="MM/DD/YYYY" /></div></div>';
+    newpage = newpage + '</div>';
+    newpage = newpage + '</div>';
+
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" disabled>Generate</button></div>';
+
+    newpage = newpage + '</div></div></div></div>';
+
+    
+    $('.dashboard-page').html(newpage);
+}
+
+function importReport()
+{  
+    updatesidemenu();
+
+    var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
+    newpage = newpage + '<div id="DocHeader">';
+    newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h3 class="mb-2" id="view_NotesTitle">Import Report</h3></div>';
+    newpage = newpage + '<br>';
+
+    newpage += `
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label><h4>Select date range option to generate an import report:</h4></label>
+                        
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="monthYear" onclick="toggleOptions(this)">
+                                Month/Year</h4>
+                            </label>
+                            <label>
+                                <h4><input type="radio" name="dateOption" value="fromDateToDate" onclick="toggleOptions(this)">
+                                From Date/To Date</h4>
+                            </label>
+                        
+                    </div>
+                </div>
+            `;
+
+    newpage = newpage + '<div class="form-group row">';
+    newpage = newpage + '<div id="monthYearOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="options">Month</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<select name="month" id="month" title="Select Action" class="sero-input" onfocus="showmonths();" onblur="hidemonths();"><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option>';
+    newpage = newpage + '<option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div></div>';
+
+    newpage += `<div id="displayMonths">
+                                <p id="length" class="invalid">January</p>
+                                <p id="capital" class="invalid">February</p>
+                                <p id="capital" class="invalid">March</p>
+                                <p id="capital" class="invalid">April</p>
+                                <p id="capital" class="invalid">May</p>
+                                <p id="capital" class="invalid">June</p>
+                                <p id="capital" class="invalid">July</p>
+                                <p id="capital" class="invalid">August</p>
+                                <p id="capital" class="invalid">September</p>
+                                <p id="capital" class="invalid">October</p>
+                                <p id="capital" class="invalid">Novemebr</p>
+                                <p id="capital" class="invalid">December</p>                                                                                                     
+                            </div> `;
+
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_conformpassword"><label for="options">Year</label>';
+    newpage = newpage + '<div id="dvConPassword" class="input-group">';
+    newpage = newpage + '<select name="year" id="year" title="Select Action" class="sero-input" onfocus="showyear();" onblur="hideyear();"><option value="2024">2024</option><option value="2023">2023</option></select></div></div>';
+    newpage = newpage + '</div>';
+
+    newpage += `<div id="displayYear">
+                                <p id="length" class="invalid">2024</p>
+                                <p id="capital" class="invalid">2023</p>                                                                                                                                    
+                            </div> `;
+    newpage = newpage + '<br>';
+
+    newpage = newpage + '<div id="fromDateToDateOptions" class="options-container" style="display: none;">';
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="fromdate">From Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="fromdate" maxlength="50" name="fromdate" type="text" value="08/15/2024" placeholder="MM/DD/YYYY" /></div></div>';
+        
+    newpage = newpage + '<div class="col-md-6 col-xs-12" id="show_hide_password"><label for="todate">To Date</label>';
+    newpage = newpage + '<div id="dvPassword" class="input-group">';
+    newpage = newpage + '<input class="form-control p-l-6" id="todate" maxlength="50" name="todate" type="text" value="08/30/2024" placeholder="MM/DD/YYYY" /></div></div>';
+    newpage = newpage + '</div>';
+    newpage = newpage + '</div>';
+
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" disabled>Generate</button></div>';
+
+    newpage = newpage + '</div></div></div></div>';
+    
+    $('.dashboard-page').html(newpage);
+}
+
 
 function exportAccounts()
 {  
@@ -2572,14 +2813,18 @@ function buildmenu(newpage)
     newpage += ` 
         <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item dropdown pub-menu-item dmenu">
+            <!--<li class="nav-item dropdown pub-menu-item dmenu">-->
+            <li>
                     <div class="">
-                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="Overview()">Overview</a>
+                        <!--<a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="Overview()">Overview</a>-->
+                        <a class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" href="#" onclick="Overview()">Overview</a>
                     </div>
             </li> `;
 
-    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
-                    <a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    newpage += ` <!--<li class="nav-item dropdown pub-menu-item dmenu">-->
+                 <li class="dropdown">
+                    <!--<a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                    <a class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="">
                             Notes & Docs
                         </span>
@@ -2588,7 +2833,7 @@ function buildmenu(newpage)
                         </span>
                     </a>
                     <div class="dropdown-menu   colMenu  sm-menu" aria-labelledby="Apps">
-                            <a href="#" onclick="Notes()">
+                            <a href="#" onclick="Notes()">                           
                                 <ul class="list-unstyled megamenu-list">
                                     <li class="pub-menu-item colMenu_item">
                                         <i class="ion-ios7-paper-outline pub-menu-icon" aria-hidden="true"></i>
@@ -2613,14 +2858,18 @@ function buildmenu(newpage)
                     </div>
             </li> `;
 
-    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+    newpage += ` <!--<li class="nav-item dropdown pub-menu-item dmenu">-->
+                <li>
                     <div class="">
-                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="HistoryClick()">History</a>
+                        <!--<a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="HistoryClick()">History</a>-->
+                        <a class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" href="#" onclick="HistoryClick()">History</a>
                     </div>
             </li> `;
 
-    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
-            <a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    newpage += ` <!--<li class="nav-item dropdown pub-menu-item dmenu">-->
+                 <li class="dropdown">
+            <!--<a style="color:black" class="nav-link xs-option dropdown-toggle" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <a class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" href="#" id="Apps" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="">
                     Actions
                 </span>
@@ -2666,9 +2915,11 @@ function buildmenu(newpage)
             </div>
     </li> `;
 
-    newpage += ` <li class="nav-item dropdown pub-menu-item dmenu">
+    newpage += ` <!--<li class="nav-item dropdown pub-menu-item dmenu">-->
+                 <li>
                     <div class="">
-                        <a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="errorValidate_overrule()">Error & Warning</a>
+                        <!--<a class="nav-link xs-option home-padding dropdown-toggle pub-menu-text" href="#" onclick="errorValidate_overrule()">Error & Warning</a>-->
+                        <a class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" href="#" onclick="errorValidate_overrule()">Error & Warning</a>
                     </div>
             </li> `;
 
