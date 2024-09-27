@@ -314,6 +314,20 @@
             font-size: normal;
         }
 
+        #displayimportfilename {
+        display: none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+        #displayimportfilename p {
+            padding: 0px;
+            font-size: normal;
+        }
+
         #feeDetails {
         display: none;
         background: #f1f1f1;
@@ -608,6 +622,18 @@
                                                 <i class="ion-link pub-menu-icon" aria-hidden="true"></i>
                                                 <div class="d-grid">
                                                     <p class="pub-menu-text dropdown-item">Export</p>
+                                                    <span style="color: #476b6b; " class="pub-menu-subtext">Export the account records.</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </a>
+
+                                    <a href="#" onclick="exportAccounts1()">
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li class="pub-menu-item colMenu_item">
+                                                <i class="ion-link pub-menu-icon" aria-hidden="true"></i>
+                                                <div class="d-grid">
+                                                    <p class="pub-menu-text dropdown-item">Export Option</p>
                                                     <span style="color: #476b6b; " class="pub-menu-subtext">Export the account records.</span>
                                                 </div>
                                             </li>
@@ -1873,6 +1899,21 @@ function hideimportfile()
 
 }
 
+function showimportfiletype()
+{
+
+    var passwordText = document.getElementById("importfilename");
+    document.getElementById("displayimportfilename").style.display = "block";
+
+}
+
+function hideimportfiletype()
+{
+    var passwordText = document.getElementById("importfilename");
+    document.getElementById("displayimportfilename").style.display = "none";
+
+}
+
 
 function showrefundmethods()
 {
@@ -2616,6 +2657,46 @@ function importReport()
     newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" disabled>Generate</button></div>';
 
     newpage = newpage + '</div></div></div></div>';
+    
+    $('.dashboard-page').html(newpage);
+}
+
+function exportAccounts1()
+{  
+    updatesidemenu();
+
+    var newpage = '<div class="form-row" id="dvDocumentHistory"><div class="col-12"><div class="card"><div class="card-body">';
+    newpage = newpage + '<div id="DocHeader">';
+    newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h3 class="mb-2" id="view_NotesTitle">Export Accounts</h3></div>';
+    newpage = newpage + '<br>';
+
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="importfiletype">Select Payment Category</label><div><select name="importfiletype" id="importfiletype" title="Select Action" class="sero-input" onfocus="showimportfile();" onblur="hideimportfile();"><option value="0">Utilities</option><option value="1">Permits</option><option value="1">Citations</option></select></div></div></div></div>';
+    newpage += `<div id="importfiletypes">
+                            <p id="length" class="invalid">Utilities</p>
+                            <p id="capital" class="invalid">Permits</p>
+                            <p id="capital" class="invalid">Citations</p>                                                                                                                     
+                        </div> `;
+
+    newpage = newpage + '<div id="divIsActive"><div class="form-row"><div class="form-group col-12"><label class="col-form-label" for="importfilename">Select Import File</label><div><select name="importfilename" id="importfilename" title="Select Import File Name" class="sero-input" onfocus="showimportfiletype();" onblur="hideimportfiletype();"><option value="0">Utilities-August2024</option><option value="1">Utilities-July2024</option><option value="1">Utilities-June2024</option></select></div></div></div></div>';
+    newpage += `<div id="displayimportfilename">
+                            <p id="length" class="invalid">Utilities-August2024</p>
+                            <p id="capital" class="invalid">Utilities-July2024</p>
+                            <p id="capital" class="invalid">Utilities-June2024</p>                                                                                                                     
+                        </div> `;
+
+    
+    newpage = newpage + '<div id="actionbutton" class="form-group text-right mt-1">';
+    newpage = newpage + '<button class="btn btn-outline-secondary btn-lg width-xl waves-effect" type="button" id="resetDocument" onclick="goToDashBoard()">Back</button>';
+    newpage = newpage + '<button class="btn btn-primary btn-lg width-lg waves-effect waves-light mr-2" type="button" id="btnExportReport" onclick="onExportSave()">Export</button></div>';
+
+    newpage = newpage + '<div class="form-row d-flex justify-content-between align-items-center"><h4 class="mb-2" id="view_NotesTitle">Export History</h4></div>';
+
+    newpage = newpage + '<div><table border=1><tr><th style="background-color: blue;color: white;"><center>Export File Name</center></th><th style="background-color: blue;color: white;"><center>Export Date</center></th><th style="background-color: blue;color: white;"><center>Download</center></th><th style="background-color: blue;color: white;"><center>Total Records</center></th><th style="background-color: blue;color: white;"><center>Total Amount Collected</center></th><th style="background-color: blue;color: white;"><center>Exported By</center></th></tr><tr><td><h5><center>Export-August2024.csv</center></h5></td><td><h5><center>08-30-2024</center></h5></td><td><h5><center><a href="Export-August2024.csv">Download</a></center></h5></td><td><h5><center>3038</center></h5></td><td><h5><center>$329,567.00</center></h5></td><td><h5><center>Bill James</center></h5></td></tr><tr><td><h5><center>Export-July2024.csv</center></td><td><h5><center>07-30-2024</center></td><td><h5><center><a href="Export-July2024.csv">Download</center></a></td><td><h5><center>3024</center></h5></td><td><h5><center>$324,345.98</center></h5></td><td><h5><center>Joel Garden</center></h5></td></tr></table>';
+
+    newpage = newpage + '</div>';
+
+    newpage = newpage + '</div></div></div></div>';
+
     
     $('.dashboard-page').html(newpage);
 }
